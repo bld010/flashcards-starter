@@ -7,11 +7,11 @@ class Round {
     this.turns = 0;
     // this.guess = guess || undefined;
     this.incorrectGuesses = [];
-  }
+  };
 
   returnCurrentCard() {
     return this.deck.cards[this.turns];
-  }
+  };
 
   takeTurn(guess) {
     const currentCard = this.returnCurrentCard();
@@ -21,12 +21,11 @@ class Round {
       this.incorrectGuesses.push(currentCard.id)
     }
     return turn.giveFeedback();
-    // return turn;
-  }
+  };
 
   calculatePercentCorrect() {
     return parseInt((this.turns - this.incorrectGuesses.length)/this.turns*100)
-  }
-}
+  };
+};
 
 module.exports = Round;
