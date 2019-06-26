@@ -9,12 +9,12 @@ const Game = require('../src/Game');
 
 describe('Game', function() {
   
-  it.skip('should create new instances of Game', function() {
+  it('should create new instances of Game', function() {
     let game = new Game();
     expect(game).to.be.an.instanceof(Game);
   });
 
-  it.skip('should have a method called start that creates cards', function() {
+  it('should have a method called start that creates cards', function() {
     let game = new Game();
 
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
@@ -29,7 +29,7 @@ describe('Game', function() {
   });
 
 
-  it.skip('should put cards in a Deck', function() {
+  it('should put cards in a Deck', function() {
     let game = new Game();
 
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
@@ -43,7 +43,7 @@ describe('Game', function() {
     expect(game.currentDeck.cards).to.deep.equal(game.currentCards);
   });
 
-  it.skip('should keep track of current round', function() {
+  it('should keep track of current round', function() {
     let game = new Game();
 
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});

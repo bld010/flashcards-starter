@@ -8,17 +8,17 @@ const Card = require('../src/Card');
 
 describe('Round', function() {
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     const round = new Round();
     expect(Round).to.be.a('function');
   });
 
-  it.skip('should be an instance of Round', function() {
+  it('should be an instance of Round', function() {
     const round = new Round();
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it.skip('should store a deck', function() {
+  it('should store a deck', function() {
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
     const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
@@ -27,7 +27,7 @@ describe('Round', function() {
     expect(round.deck).to.deep.equal(deck);
   });
 
-  it.skip('has a method to return current card', function() {
+  it('has a method to return current card', function() {
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
     const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
@@ -36,7 +36,7 @@ describe('Round', function() {
     expect(round.returnCurrentCard()).to.deep.equal(card1);
   });
 
-  it.skip('has a method called takeTurn', function() {
+  it('has a method called takeTurn', function() {
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
     const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
@@ -45,7 +45,7 @@ describe('Round', function() {
     expect(round.takeTurn).to.be.a('function');
   });
 
-  it.skip('has takeTurn method that creates a new instance of Turn', function() {
+  it('has takeTurn method that creates a new instance of Turn', function() {
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
     const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
@@ -56,7 +56,7 @@ describe('Round', function() {
     expect(round.takeTurn('spleen')).to.equal('incorrect!');
   });
 
-  it.skip('has takeTurn method that increases turn count', function() {
+  it('has takeTurn method that increases turn count', function() {
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
     const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
@@ -71,7 +71,7 @@ describe('Round', function() {
     expect(round.turns).to.equal(2);
   })
 
-  it.skip('has takeTurn method that evaluates guesses', function() {
+  it('can evaluates guesses', function() {
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
     const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
@@ -81,7 +81,7 @@ describe('Round', function() {
     expect(round.takeTurn('gallbladder')).to.equal('correct!');
   })
 
-  it.skip('has takeTurn method that stores incorrect card ids in array', function() {
+  it('can store ids of incorrect guesses', function() {
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
     const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
@@ -98,7 +98,7 @@ describe('Round', function() {
     expect(round.incorrectGuesses).to.deep.equal([1, 12])
   });
 
-  it.skip('has a method to return percent correct', function() {
+  it('can return percent correct', function() {
     const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
     const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
     const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
@@ -111,5 +111,17 @@ describe('Round', function() {
 
     expect(round.calculatePercentCorrect()).to.equal(33)
   });
+
+  it('can end the round', function() {
+    const card1 = new Card({id: 1, question: 'What is Robbie\'s favorite animal', answers: ['sea otter', 'pug', 'capybara'], correctAnswer: 'sea otter'});
+    const card2 = new Card({id: 14, question: 'What organ is Khalid missing?', answers: ['spleen', 'appendix', 'gallbladder'], correctAnswer: 'gallbladder'});
+    const card3 = new Card({id: 12, question: 'What is Travis\'s middle name?', answers: ['Lex', 'William', 'Fitzgerald'], correctAnswer: 'Fitzgerald'});
+    const deck = new Deck([card1, card2, card3]);
+
+    round.takeTurn('blue');
+    round.takeTurn('gallbladder');
+    round.takeTurn('George');
+    round.takeTurn('blah')
+  })
 
 });
