@@ -23,21 +23,9 @@ describe('Game', function() {
     expect(game).to.be.an.instanceof(Game);
   });
 
-  it('should create cards', function() {
-    game.start(gameCards);
-    expect(game.currentCards).to.deep.equal([card1, card2, card3])
-  });
-
-  it('should put cards in a Deck', function() {
-    game.start(gameCards);
-    expect(game.currentDeck.cards).to.deep.equal(game.currentCards);
-  });
-
   it('should keep track of current round', function() {
-    game.start(gameCards);
+    game.start();
     expect(game.currentRound.turns).to.equal(0);
-    expect(game.currentRound.deck.cards).to.deep.equal(gameCards);
-    expect(game.currentRound.incorrectGuesses).to.deep.equal([]);
   }); 
 
 });

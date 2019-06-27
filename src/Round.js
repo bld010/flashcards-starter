@@ -1,11 +1,14 @@
 const Turn = require('../src/Turn');
+const data = require('../src/data');
+const prototypeQuestions = data.prototypeData;
 
 class Round {
 
-  constructor(deck) {
+  constructor(deck, game) {
     this.deck = deck || [];
     this.turns = 0;
     this.incorrectGuesses = [];
+    this.game = game;
   };
 
   returnCurrentCard() {
@@ -30,7 +33,13 @@ class Round {
   };
 
   endRound() {
-    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
+    if (this.calculatePercentCorrect() >= 90 ) {
+      console.log(`\n \n \n \n ** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!'`)
+    } 
+    else {
+      console.log(`\n \n \n \nYou scored less than 90% correct. Please try again!' \n \n \n \n`);
+      this.game.start();
+    }
   }
 };
 
