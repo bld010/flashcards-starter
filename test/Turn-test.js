@@ -6,10 +6,10 @@ const Card = require('../src/Card');
 
 var card, turn1;
 
-describe('Turn', function(){
+describe('Turn', function() {
 
   beforeEach(function() {
-    card = new Card({id: 1, question: 'Where is Turing Located?', answers:['Denver', 'Chicago', 'New York'], correctAnswer: 'Denver'});
+    card = new Card({id: 1, question: 'Where is Turing Located?', answers: ['Denver', 'Chicago', 'New York'], correctAnswer: 'Denver'});
     turn1 = new Turn('Denver', card);
   });
 
@@ -21,7 +21,7 @@ describe('Turn', function(){
     expect(turn1).to.be.an.instanceof(Turn);
   });
 
-  it('should store a guess', function(){
+  it('should store a guess', function() {
 
     expect(turn1.guess).to.equal('Denver');
   });
@@ -59,12 +59,12 @@ describe('Turn', function(){
   describe('giveFeedback', function() {
 
     it('should give feedback on correct guesses', function() {
-    expect(turn1.giveFeedback()).to.equal('correct!');
+      expect(turn1.giveFeedback()).to.equal('correct!');
     });
 
     it('should give feedback on incorrect guesses', function() {
-    const turn2 = new Turn('Chicago', card);
-    expect(turn2.giveFeedback()).to.equal('incorrect!');
+      const turn2 = new Turn('Chicago', card);
+      expect(turn2.giveFeedback()).to.equal('incorrect!');
     });
 
   });

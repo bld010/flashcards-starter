@@ -13,12 +13,12 @@ class Game {
   }
 
   printMessage(deck, round) {
-      console.log(`\n \n \n \nWelcome to FlashCards! You are playing with ${deck.countCards()} cards.
+    console.log(`\n \n \n \nWelcome to FlashCards! You are playing with ${deck.countCards()} cards.
 ----------------------------------------------------------------------- \n \n \n \n `)
   }
 
   printQuestion(round) {
-      util.main(round);
+    util.main(round);
   }
 
   start() {
