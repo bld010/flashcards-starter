@@ -4,7 +4,7 @@ This is the Module 2 project for Turing School of Software & Design Front End 19
 
 # Gameplay
 
-![Gameplay Gif]("https://github.com/bld010/flashcards-starter/blob/master/flashcards.gif")
+![Gameplay Gif]("/flashcards.gif")
 
 ## Setup
 
