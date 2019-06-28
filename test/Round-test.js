@@ -21,7 +21,7 @@ describe('Round', function() {
     expect(Round).to.be.a('function');
   });
 
-  it('should be an instance of Round', function() {
+  it('should should create instances of Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
 

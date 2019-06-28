@@ -22,22 +22,18 @@ describe('Turn', function() {
   });
 
   it('should store a guess', function() {
-
     expect(turn1.guess).to.equal('Denver');
   });
 
   it('should store a card', function() {
-
     expect(turn1.card).to.deep.equal(card);
   });
 
   it('should return guesses', function() {
-
     expect(turn1.returnGuess()).to.equal('Denver');
   });
 
   it('should return cards', function() {
-
     expect(turn1.returnCard()).to.deep.equal({id: 1, question: 'Where is Turing Located?', answers: ['Denver', 'Chicago', 'New York'], correctAnswer: 'Denver'})
   });
 
